@@ -3,26 +3,26 @@ import fonts.fontAwesome;
 /*DSG{{*/
 var frmXray = win.form(text="winXray ";right=959;bottom=591;bgcolor=16777215)
 frmXray.add(
-btnEditPac={cls="plus";text="编辑PAC";left=332;top=367;right=438;bottom=397;align="left";db=1;dr=1;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=12}};iconText='\uF1C4';notify=1;textPadding={left=30};z=7};
-btnImportServerFromClipBd={cls="plus";text="批量导入链接";left=459;top=367;right=592;bottom=397;align="left";db=1;dr=1;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=12}};iconText='\uF196 ';notify=1;textPadding={left=30};z=8};
-btnTcping={cls="plus";text="检测并连接最快服务器";left=735;top=366;right=941;bottom=398;align="left";bgcolor=11580047;border={radius=4};db=1;dr=1;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=18}};iconText='\uF012';notify=1;textPadding={left=42};z=3};
-chkAutoTest={cls="plus";text="异常自动重连 ";left=598;top=367;right=729;bottom=397;align="left";db=1;dr=1;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=12}};iconText='\uF0C8';notify=1;textPadding={left=30};z=9};
+btnEditPac={cls="plus";text="Edit PAC";left=332;top=367;right=438;bottom=397;align="left";db=1;dr=1;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=12}};iconText='\uF1C4';notify=1;textPadding={left=30};z=7};
+btnImportServerFromClipBd={cls="plus";text="Import links in bulk";left=459;top=367;right=592;bottom=397;align="left";db=1;dr=1;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=12}};iconText='\uF196 ';notify=1;textPadding={left=30};z=8};
+btnTcping={cls="plus";text="Detect and connect to the fastest server";left=735;top=366;right=941;bottom=398;align="left";bgcolor=11580047;border={radius=4};db=1;dr=1;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=18}};iconText='\uF012';notify=1;textPadding={left=42};z=3};
+chkAutoTest={cls="plus";text="Abnormal automatic reconnection";left=598;top=367;right=729;bottom=397;align="left";db=1;dr=1;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=12}};iconText='\uF0C8';notify=1;textPadding={left=30};z=9};
 edit={cls="edit";left=6;top=405;right=953;bottom=585;bgcolor=0;color=16777215;db=1;dl=1;dr=1;edge=1;hscroll=1;multiline=1;vscroll=1;z=2};
 listview={cls="listview";left=4;top=5;right=954;bottom=358;db=1;dl=1;dr=1;dt=1;edge=1;fullRow=1;gridLines=1;z=1};
-radioProxy={cls="radiobutton";text="全局代理";left=129;top=369;right=226;bottom=395;bgcolor=16777215;db=1;dl=1;font=LOGFONT(h=-13);z=4};
-radioProxyDirect={cls="radiobutton";text="不使用代理";left=14;top=369;right=120;bottom=395;bgcolor=16777215;db=1;dl=1;font=LOGFONT(h=-13);z=6};
-radioProxyPac={cls="radiobutton";text="PAC代理";left=234;top=369;right=321;bottom=395;bgcolor=16777215;db=1;dl=1;font=LOGFONT(h=-13);z=5}
+radioProxy={cls="radiobutton";text="Global proxy";left=129;top=369;right=226;bottom=395;bgcolor=16777215;db=1;dl=1;font=LOGFONT(h=-13);z=4};
+radioProxyDirect={cls="radiobutton";text="No proxy";left=14;top=369;right=120;bottom=395;bgcolor=16777215;db=1;dl=1;font=LOGFONT(h=-13);z=6};
+radioProxyPac={cls="radiobutton";text="PAC Proxy";left=234;top=369;right=321;bottom=395;bgcolor=16777215;db=1;dl=1;font=LOGFONT(h=-13);z=5}
 )
 /*}}*/
 
-frmXray.listview.insertColumn("类型",100) 
-frmXray.listview.insertColumn("服务器",160) 
-frmXray.listview.insertColumn("端口",70) 
-frmXray.listview.insertColumn("加密",90) 
-frmXray.listview.insertColumn("协议",50) 
-frmXray.listview.insertColumn("备注",190) 
-frmXray.listview.insertColumn("响应速度",95) 
-frmXray.listview.insertColumn("状态",-1) 
+frmXray.listview.insertColumn("Type",100) 
+frmXray.listview.insertColumn("Server",160) 
+frmXray.listview.insertColumn("Port",70) 
+frmXray.listview.insertColumn("Encryption",90) 
+frmXray.listview.insertColumn("Protocol",50) 
+frmXray.listview.insertColumn("Remarks",190) 
+frmXray.listview.insertColumn("Responding speed",95) 
+frmXray.listview.insertColumn("Status",-1) 
 frmXray.listview.setExtended(0x10000/*_LVS_EX_DOUBLEBUFFER*/);
 
 frmXray.show();
@@ -112,7 +112,7 @@ Host: www.google.com
 Connection: close
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64)
 Accept: */*;  
-Accept-Language: zh-CN,zh; 
+Accept-Language: en-USA,en; 
 Accept-Charset:utf-8;  
 ***********/
 						client.write( sendData + '\r\n\r\n' )
@@ -168,7 +168,7 @@ frmXray.onStartXrayComplete = function(outboundIndex,currentTesting,outboundAddr
 	}
 	
 	frmXray.autoTesting = false;
-	listview.setItemText("活动服务器：正常",outboundIndex,8);
+	listview.setItemText("Active server：normal",outboundIndex,8);
 	listview.activeOutboundIndex = outboundIndex;
 
 	var address  = listview.getItemText(outboundIndex,2);
@@ -524,22 +524,22 @@ frmXray.listview.onnotify = function(id,code,ptr){
 			var currentIdx = nm.iItem;
 			if(!currentIdx){
 				var popmenu = win.ui.popmenu(frmXray);
-				popmenu.add("新增代理服务器",function(id){ 
+				popmenu.add("New proxy server",function(id){ 
 					var frmOutbound = frmXray.loadForm("\forms\main\outbound.aardio"); 
 					frmOutbound.doModal() 
 				});
 				
-				popmenu.add("自剪贴板批量导入分享链接、订阅源",function(id){
+				popmenu.add("Batch import sharing links and feeds from the clipboard",function(id){
 					frmXray.btnImportServerFromClipBd.oncommand();
 				});
 				
-				popmenu.add('立即更新所有订阅源',function(id){
+				popmenu.add('Update all feeds immediately',function(id){
 					xray.outbounds.updateSubscription();
 				});
 				
 				popmenu.add(); 
 				
-				popmenu.add('清空服务器列表',function(id){
+				popmenu.add('Clear the server list',function(id){
 					config.proxy.outbounds = ..table.array();
 					frmXray.listview.clear();
 					
@@ -549,11 +549,11 @@ frmXray.listview.onnotify = function(id,code,ptr){
 					publish("outbounds.updateConfigJson");
 				});
 				
-				popmenu.add('清除「不可用」服务器',function(id){
+				popmenu.add('Clear 'unavailable' servers',function(id){
 					removeOutbounds();
 				});	
 				
-				popmenu.add("重置为默认服务器列表",
+				popmenu.add("Reset to default server list",
 					function(id){
 						..config.__loadDefaultOutbounds();
 						publish("outbounds.updateConfigJson");
@@ -563,7 +563,7 @@ frmXray.listview.onnotify = function(id,code,ptr){
 				popmenu.add();
 				
 				if(!frmXray.btnTcping.disabledText){
-					popmenu.add('按「响应速度」排序服务器',function(id){
+					popmenu.add('Sort servers by "response speed"',function(id){
 						frmXray.listview.sortBySpeed();
 					});	 
 					popmenu.add();
@@ -576,7 +576,7 @@ frmXray.listview.onnotify = function(id,code,ptr){
 			var popmenu = win.ui.popmenu(frmXray);
 			
 			if(#selectedItems==1){
-				popmenu.add('设为活动服务器( 鼠标双击 )',function(id){
+				popmenu.add('Set as active server (double click)',function(id){
 					if(currentIdx){
 						xray.core.lastDownloadingCoreFailed = false;
 						
@@ -598,13 +598,13 @@ frmXray.listview.onnotify = function(id,code,ptr){
 				popmenu.add();
 			}
 			 
-			popmenu.add("编辑 / 新增代理服务器",function(id){ 
+			popmenu.add("Edit / add proxy server",function(id){ 
 				var frmOutbound = frmXray.loadForm("\forms\main\outbound.aardio");
 				frmOutbound.setOutboundConfig(config.proxy.outbounds[currentIdx]);
 				frmOutbound.doModal() 
 			});
 			
-			popmenu.add("自剪贴板批量导入分享链接、订阅源",function(id){
+			popmenu.add("Batch import sharing links and feeds from the clipboard",function(id){
 				frmXray.btnImportServerFromClipBd.oncommand();
 			});
 			 
@@ -625,14 +625,14 @@ frmXray.listview.onnotify = function(id,code,ptr){
 					ps = ": "+ps;
 				}
 			
-				popmenu.add('更新当前订阅源'+ps,function(id){
+				popmenu.add('Update current feed'+ps,function(id){
 					if(currentIdx){
 						xray.outbounds.updateSubscription({[subscribeUrl]=true});
 					}
 				});	
 			}
 
-			popmenu.add('更新所有订阅源',function(id){
+			popmenu.add('Update all feeds',function(id){
 				if(currentIdx){
 					xray.outbounds.updateSubscription();
 				}
@@ -641,7 +641,7 @@ frmXray.listview.onnotify = function(id,code,ptr){
 			popmenu.add()
 
 			var autoConnect = config.proxy.outbounds[currentIdx].autoConnect!==false; 
-			var id = popmenu.add('允许自动测速并连接',function(id){
+			var id = popmenu.add('Allow automatic speed measurement and connection',function(id){
 				if(currentIdx){
 					for(i=#selectedItems;1;-1){ 
 						var item = selectedItems[i];
@@ -659,11 +659,11 @@ frmXray.listview.onnotify = function(id,code,ptr){
 			popmenu.check(id,autoConnect,0/*_MF_BYCOMMAND*/); 
 			popmenu.add()
 			
-			popmenu.add('删除服务器',function(id){
+			popmenu.add('Delete server',function(id){
 				removeOutbounds(selectedItems);
 			});
 				
-			popmenu.add('清空服务器列表',function(id){
+			popmenu.add('Clear the server list',function(id){
 				if(currentIdx){
 					config.proxy.outbounds = ..table.array();
 					frmXray.listview.clear();
@@ -671,11 +671,11 @@ frmXray.listview.onnotify = function(id,code,ptr){
 				}
 			});
 			
-			popmenu.add('清除「不可用」服务器',function(id){
+			popmenu.add('Clear "unavailable" servers',function(id){
 				removeOutbounds();
 			});	
 			
-			popmenu.add("重置为默认服务器列表",
+			popmenu.add("Reset to default server list",
 				function(id){
 					..config.__loadDefaultOutbounds();
 					publish("outbounds.updateConfigJson");
@@ -686,7 +686,7 @@ frmXray.listview.onnotify = function(id,code,ptr){
 			if(#selectedItems==1){	
 		 
 				popmenu.add();
-				popmenu.add('生成二维码',function(id){
+				popmenu.add('Generate QR code',function(id){
 					if(currentIdx){
 						import xray.outbounds;
 						import win.clip;
@@ -700,7 +700,7 @@ frmXray.listview.onnotify = function(id,code,ptr){
 					}
 				});
 				
-				popmenu.add('复制服务器分享链接',function(id){
+				popmenu.add('Copy server share link',function(id){
 					if(currentIdx){
 						import xray.outbounds;
 						import win.clip;
@@ -716,31 +716,31 @@ frmXray.listview.onnotify = function(id,code,ptr){
 				popmenu.add();
 				
 				var toolMenu = win.ui.popmenu(frmXray)
-				toolMenu.add('本机 Ping 检测',function(id){
+				toolMenu.add('Native Ping detection',function(id){
 					if(currentIdx){
 						thread.invoke(pingThread,config.proxy.outbounds[currentIdx].address,frmXray)
 					}
 				});
 					
-				toolMenu.add('全球范围 Ping 检测 ...',function(id){
+				toolMenu.add('Ping detection worldwide ...',function(id){
 					if(currentIdx){
 						process.openUrl("http://ping.pe/" + config.proxy.outbounds[currentIdx].address)
 					}
 				});
 				
-				toolMenu.add('全球范围端口检测 ...',function(id){
+				toolMenu.add('Global port detection ...',function(id){
 					if(currentIdx){
 						process.openUrl("http://port.ping.pe/" + config.proxy.outbounds[currentIdx].address + ":" + config.proxy.outbounds[currentIdx].port)
 					}
 				});
 				
-				toolMenu.add('在线路由跟踪检测 ...',function(id){
+				toolMenu.add('Online route tracking detection ...',function(id){
 					if(currentIdx){
 						process.openUrl("https://www.boce.com/traceroute/" + config.proxy.outbounds[currentIdx].address)
 					}
 				});
 				
-				toolMenu.add('本机路由检测',function(id){
+				toolMenu.add('Native route detection',function(id){
 					if(currentIdx){
 						import process;
 						process.execute("cmd.exe","/k tracert " + config.proxy.outbounds[currentIdx].address);
@@ -748,16 +748,16 @@ frmXray.listview.onnotify = function(id,code,ptr){
 				});
 
 				if(config.proxy.outbounds[currentIdx].port == 443 && config.proxy.outbounds[currentIdx].tls){
-					toolMenu.add('浏览 HTTPS 主页 ...',function(id){
+					toolMenu.add('Browse the HTTPS homepage ...',function(id){
 						if(currentIdx){
 							process.openUrl("https" ++ "://" + config.proxy.outbounds[currentIdx].address); 
 						}
 					});	 
 				}
 				
-				popmenu.add("服务器工具",toolMenu)
+				popmenu.add("Server tools",toolMenu)
 				
-				popmenu.add('SSH 登录服务器',function(id){
+				popmenu.add('SSH login server',function(id){
 					if(currentIdx){
 						if(_STUDIO_INVOKED){
 							frmXray.msgErr("请在发布后运行此功能");
@@ -869,7 +869,7 @@ frmXray.listview.sortBySpeed = function () {
 	} 
 	
 	if(frmXray.listview.activeOutboundIndex){
-		frmXray.listview.setItemText("活动服务器：正常",frmXray.listview.activeOutboundIndex,8)
+		frmXray.listview.setItemText("Active server: normal",frmXray.listview.activeOutboundIndex,8)
 	} 
 	frmXray.listview.setColumnImage(7, desc ? 1 : 0);
 }
